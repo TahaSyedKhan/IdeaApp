@@ -1,0 +1,22 @@
+{
+  "name": "ideaapp",
+  "version": "1.0.0",
+  "description": "Idea App worshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TahaSyedKhan/IdeaApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TahaSyedKhan/IdeaApp/issues"
+  },
+  "homepage": "https://github.com/TahaSyedKhan/IdeaApp#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
