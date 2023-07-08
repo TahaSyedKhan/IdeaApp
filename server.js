@@ -1,8 +1,9 @@
 const express  = require('express');
-const serverConfig = require('./configs/server.config')
+const serverConfig = require('./configs/server.config');
 const mongoose = require('mongoose');
-const dbConfig = require('./configs/db.config')
-const userModel = require('./models/user.model')
+const dbConfig = require('./configs/db.config');
+const userModel = require('./models/user.model');
+const bCrypt = require('bcrypt');
 
 
 const app = express();
@@ -27,7 +28,7 @@ async function init() {
   
     let admin = await userModel.findOne({
         userId: "admin"
-    })
+    });
 
     //Check if admin is already present
     if (admin) {
@@ -40,7 +41,7 @@ async function init() {
         userId: "admin",
         email: "tahasyedkhan123@gmail.com",
         userType: "ADMIN",
-        password: "admin"
+        password: bCrypt.hashSync("admin", 8)
     });
 
     console.log(admin);
@@ -49,4 +50,4 @@ async function init() {
 
 app.listen(serverConfig.PORT, ()=>{
     console.log(`server started on the port number ${serverConfig.PORT}` );
-})
+});
